@@ -2,9 +2,10 @@
   "name": "randomword",
   "version": "1.0.0",
   "description": "Generate a random word",
-  "main": "index.js",
+  "entry": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack",
+    "deploy": "npm run build && cp src/index.css dist/ && cp src/index.html dist/ && echo copied"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/michael-lowe-nz/randomWord/issues"
   },
-  "homepage": "https://github.com/michael-lowe-nz/randomWord#readme"
+  "homepage": "https://github.com/michael-lowe-nz/randomWord#readme",
+  "dependencies": {
+    "gh-pages": "^1.1.0",
+    "webpack": "^4.6.0"
+  }
 }

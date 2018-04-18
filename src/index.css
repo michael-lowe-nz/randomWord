@@ -1,6 +1,6 @@
 body {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
     width:100%;
@@ -8,6 +8,16 @@ body {
     position:absolute;
 }
 
+.button {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
 #word {
-  margin-top:20%;
+  position: relative;
+}
+
+h1 {
+  font-weight: 700;
 }
