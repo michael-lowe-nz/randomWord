@@ -5,6 +5,7 @@
   "entry": "index.js",
   "scripts": {
     "build": "webpack",
+    "start": "webpack --watch",
     "deploy": "npm run build && cp src/index.css dist/ && cp src/index.html dist/ && echo copied"
   },
   "repository": {

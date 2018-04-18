@@ -1,4 +1,4 @@
-export default [
+var colorCombinations = [
   ['#fc5c65', '#fed330'],
   ['#fc5c65', '#fd9644'],
   ['#fc5c65', '#26de81'],
@@ -34,3 +34,5 @@ export default [
   ['#fd9644', '#d1d8e0'],
   ['#fd9644', '#2d98da'],
 ]
+
+export default colorCombinations
