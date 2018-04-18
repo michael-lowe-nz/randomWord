@@ -1,6 +1,7 @@
 import words from './constants/words'
 import colorCombinations from './constants/colorCombinations'
 import colorContrast from 'font-color-contrast'
+import attachFastClick from 'fastclick'
 
 var word = document.getElementById('word')
 var background = document.querySelector('.background')
