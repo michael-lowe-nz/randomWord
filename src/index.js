@@ -1,7 +1,9 @@
 import words from './constants/words'
 import colorCombinations from './constants/colorCombinations'
+import colorContrast from 'font-color-contrast'
+
 var word = document.getElementById('word')
-var background = document.querySelector('body')
+var background = document.querySelector('.background')
 
 function randomNumber(min, max) {
   return Math.floor(Math.random() * (max + 1 - min)) + min;
@@ -25,12 +27,14 @@ function handleNewWord() {
   else {
     complementBinary = 0
   }
-  renderWord(newWord, colorPairing[randomBinary]);
-  renderBackground(colorPairing[complementBinary])
+  renderWord(newWord, colorContrast(colorPairing[randomBinary]));
+  renderBackground(colorPairing[randomBinary])
 }
 
 function renderWord(str, color) {
   word.innerHTML = str
+  word.style = 'transform: translateX(' + randomNumber(0, 40) + 'vw) translateY(' + randomNumber(0, 40) + 'vh)'
+  word.style.fontSize = randomNumber(20, 45) + 'px'
   word.style.color = color
 }
 

@@ -5,7 +5,7 @@
   "entry": "index.js",
   "scripts": {
     "build": "webpack",
-    "start": "webpack --watch",
+    "start": "webpack --watch --output-filename bundle.js",
     "deploy": "npm run build && cp src/index.css dist/ && cp src/index.html dist/ && echo copied"
   },
   "repository": {
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/michael-lowe-nz/randomWord#readme",
   "dependencies": {
+    "font-color-contrast": "^1.0.3",
     "gh-pages": "^1.1.0",
     "webpack": "^4.6.0"
   }
