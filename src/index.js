@@ -9,7 +9,7 @@ function randomNumber(min, max) {
   return Math.floor(Math.random() * (max + 1 - min)) + min;
 }
 
-function getRandomColorPairing() {
+function getRandomColor() {
   return colorCombinations[Math.floor(Math.random() * colorCombinations.length)]
 }
 
@@ -20,21 +20,29 @@ function getRandomWord(level = 1) {
 
 function handleNewWord() {
   var newWord = getRandomWord()
-  var colorPairing = getRandomColorPairing()
+  var color = getRandomColor()
+  var colorPair = [colorContrast(color), color]
   var randomBinary = Math.round(Math.random())
   var complementBinary
   if (randomBinary === 0) complementBinary = 1
   else {
     complementBinary = 0
   }
-  renderWord(newWord, colorContrast(colorPairing[randomBinary]));
-  renderBackground(colorPairing[randomBinary])
+  renderWord(newWord, (colorPair[randomBinary]));
+  renderBackground(colorPair[complementBinary])
+}
+
+function halfChanceGet(char) {
+  if (Math.round(Math.random())) return char
+  return ''
 }
 
 function renderWord(str, color) {
   word.innerHTML = str
-  word.style = 'transform: translateX(' + randomNumber(0, 40) + 'vw) translateY(' + randomNumber(0, 40) + 'vh)'
-  word.style.fontSize = randomNumber(20, 45) + 'px'
+  var translateX = 'translateX(' + halfChanceGet('-') + randomNumber(0, 15) + 'vw)'
+  var translateY = 'translateY(' + halfChanceGet('-') + randomNumber(0, 15) + 'vh)'
+  word.style = 'transform: ' + translateX + ' ' + translateY
+  word.style.fontSize = randomNumber(10, 25) + 'vw'
   word.style.color = color
 }
 

@@ -4,9 +4,9 @@
   "description": "Generate a random word",
   "entry": "index.js",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --output-filename bundle.js",
     "start": "webpack --watch --output-filename bundle.js",
-    "deploy": "npm run build && cp src/index.css dist/ && cp src/index.html dist/ && echo copied"
+    "deploy": "npm run build && cp src/index.css dist/ && cp src/index.html dist/ && gh-pages -d dist"
   },
   "repository": {
     "type": "git",
