@@ -1,10 +1,6 @@
 import words from './constants/words'
 import colorCombinations from './constants/colorCombinations'
 import colorContrast from 'font-color-contrast'
-import attachFastClick from 'fastclick'
-
-var word = document.getElementById('word')
-var background = document.querySelector('.background')
 
 function randomNumber(min, max) {
   return Math.floor(Math.random() * (max + 1 - min)) + min;
@@ -37,6 +33,12 @@ function halfChanceGet(char) {
   if (Math.round(Math.random())) return char
   return ''
 }
+
+/**
+ * View
+ */
+var word = document.getElementById('word')
+var background = document.querySelector('.background')
 
 function renderWord(str, color) {
   word.innerHTML = str
